@@ -1,0 +1,50 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+
+        <h1 class='posttitle loader'>{{ alumni.title }}</h1>
+
+        {% if alumni.published_date %}
+            <div class="date postdate">
+                {{ alumni.published_date }}
+            </div>
+
+        {% else %}
+            <a class="btn btn-default" href="{% url 'alumni_publish' pk=alumni.pk %}">Publish</a>
+        {% endif %}
+
+      <p class='postcontent' >{{ alumni.text|safe|linebreaksbr }}</p>
+
+
+      {% if user.is_authenticated %}
+          <a class="btn btn-primary" href="{% url 'alumni_edit' pk=alumni.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-primary" href="{% url 'alumni_remove' pk=alumni.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
+
+
+
+  <hr>
+  <a class="btn btn-primary btn-comment" href="{% url 'add_alumnistudent_to_alumni' pk=alumni.pk %}">Add a student</a>
+  <div class="container">
+
+
+  {% for alumnistudent in alumni.alumnistudents.all %}
+  <br>
+      {% if user.is_authenticated or alumnistudent.approved_alumnistudent %}
+
+              {{ alumnistudent.created_date }}
+              {% if not alumnistudent.approved_alumnistudent %}
+                  <a class="btn btn-default" href="{% url 'alumnistudent_remove' pk=alumnistudent.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a class="btn btn-default" href="{% url 'alumnistudent_approve' pk=alumnistudent.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+              {% endif %}
+              <p>{{alumnistudent.name}}</p>
+            <img src="{{alumnistudent.image}}" alt="notfound">
+          <p>{{ alumnistudent.text|safe|linebreaks }}</p>
+      {% endif %}
+  {% empty %}
+      <p>No alumni yet uploaded </p>
+  {% endfor %}
+</div>
+
+{% endblock %}

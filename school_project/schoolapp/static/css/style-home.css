@@ -1,0 +1,257 @@
+/*Header*/
+#enquiry {
+        padding-top: 5px;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        width:50%;
+}
+/*Left Nav drawers for mobile devices*/
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+hr {
+        border-top: 1px solid rgba(0,0,0,0) !important;
+}
+
+#mobile-nav-drawer {
+        display: none;
+        border-bottom: 1px solid rgba(0,0,0,0.14);
+        background-color: white;
+}
+
+.leftsidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.leftsidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.leftsidenav a:hover {
+    color: #f1f1f1;
+}
+
+.leftsidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#leftmain {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .leftsidenav {padding-top: 15px;}
+  .leftsidenav a {font-size: 18px;}
+}
+
+/*Right Nav drawers for mobile devices*/
+.rightsidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.rightsidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.rightsidenav a:hover {
+    color: #f1f1f1;
+}
+
+.rightsidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#rightmain {
+    transition: margin-right .5s;
+    padding: 16px;
+    padding-top: 0px;
+    float: right;
+}
+
+@media screen and (max-height: 450px) {
+  .leftsidenav {padding-top: 15px;}
+  .leftsidenav a {font-size: 18px;}
+}
+
+/*Navs for non mobile devices*/
+#login-button {
+        color: rgba(255,255,255,0.5) !important;
+}
+
+#login-button:hover {
+        color: rgba(255,255,255,0.75) !important;
+        text-decoration: none;
+}
+
+nav {
+        padding-top: 0 !important;;
+        padding-bottom: 0 !important;
+}
+/*#nav-1 {
+        border-top: 1px solid rgba(0,0,0,0.15);
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#nav-2 {
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+}*/
+
+#nav-end {
+
+}
+
+/*body*/
+body {
+        transition: background-color .5s;
+}
+
+/*footer*/
+
+footer {
+        padding:10px 0 10px 0;
+        border-top: 1px solid rgba(0,0,0,0.15);
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+span {
+        padding-right: 0 !important;
+}
+
+/*Media Queries*/
+
+/*xs*/
+@media only screen and (max-width: 580px) {
+        .hide-lessdn580 {
+                display: none !important;
+        }
+}
+
+@media only screen and (max-width: 640px) {
+        #school-name {
+                font-size: 40px;
+                text-align: center;
+        }
+        #mobile-nav-drawer {
+                display: block;
+        }
+        #nav-1 {
+                display: none;
+        }
+        #nav-2 {
+                display: none;
+        }
+        #topline {
+                display: none;
+        }
+        footer div {
+                margin-bottom: 20px;
+        }
+}
+
+/*sm*/
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+        #school-name {
+                font-size: 45px;
+                text-align: center;
+        }
+        #mobile-nav-drawer {
+                display: block;
+        }
+        #nav-1 {
+                display: none;
+        }
+        #nav-2 {
+                display: none;
+        }
+        #topline {
+                display: none;
+        }
+        footer div {
+                margin-bottom: 20px;
+        }
+}
+
+/*md*/
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+        #school-name {
+                font-size: 46px;
+                padding-top: 10px;
+        }
+        #mobile-nav-drawer {
+                display: block;
+        }
+        #nav-1 {
+                display: none;
+        }
+        #nav-2 {
+                display: none;
+        }
+        #topline {
+                display: none;
+        }
+}
+
+/*lg*/
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+        #school-name {
+                font-size: 63px;
+                padding-top: 15px;
+        }
+        hr {
+                display: none;
+        }
+
+}
+
+/*xl*/
+@media only screen and (min-width: 1201px) {
+        #school-name {
+                font-size: 75px;
+                padding-top: 15px;
+        }
+        hr {
+                display: none;
+        }
+}

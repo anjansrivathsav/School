@@ -1,0 +1,11 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<form class="post-form" enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" name="" value="confirm" class="btn btn-primary">
+</form>
+
+{% endblock %}

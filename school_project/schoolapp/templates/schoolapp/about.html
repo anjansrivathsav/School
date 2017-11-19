@@ -1,0 +1,27 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+<h1>Elegant Contact Form</h1>
+<form class="cf">
+  <div class="half left cf">
+    <input type="text" id="input-name" placeholder="Name">
+    <input type="email" id="input-email" placeholder="Email address">
+    <input type="text" id="input-subject" placeholder="Date of Birth">
+    <input type="text" id="input-subject" placeholder="Gender">
+    <input type="text" id="input-subject" placeholder="Subject">
+    <input type="text" id="input-subject" placeholder="Father's Name">
+    <input type="text" id="input-subject" placeholder="Mother's Name">
+
+  </div>
+  <div class="half right cf">
+    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+    <input type="text" id="input-subject" placeholder="Place of Birth">
+    <input type="text" id="input-subject" placeholder="Seeking admission in class">
+    <input type="text" id="input-subject" placeholder="Occupation">
+    <input type="text" id="input-subject" placeholder="Mobile">
+    <input type="text" id="input-subject" placeholder="Is school transport required?">
+  </div>
+  <input type="submit" value="Submit" id="input-submit">
+</form>
+
+{% endblock %}

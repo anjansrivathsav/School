@@ -1,0 +1,296 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+        <title>Activities - Raman High School</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style-home.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+        <!-- Header -->
+        <!-- Navs for mobile devices -->
+        <div class="sticky-top" id="mobile-nav-drawer">
+                <!-- Left drawer -->
+                <div id="LeftSidenav" class="leftsidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&times;</a>
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Academics</a>
+                        <a href="#">Admissions</a>
+                        <a href="#">Activities</a>
+                        <a href="#">Events</a>
+                        <a href="#">Achievements</a>
+                        <a href="#">Infrastructure</a>
+                        <a href="#">Gallery</a>
+                        <!-- <a href="#">Submit Enquiry</a> -->
+                </div>
+                <div>
+                        <span class="" id="leftmain" style="font-size:30px;cursor:pointer" onclick="openLeftNav()">&#9776;</span>
+                        <span id="enquiry"><a href="#"><h5>Submit Enquiry</h5></a></span>
+                        <span class="" id = "rightmain" style="font-size:30px;cursor:pointer" onclick="openRightNav()">&#9776;</span>
+                </div>
+                <!-- Right drawer -->
+                <div id="RightSidenav" class="rightsidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&times;</a>
+                        <a href="#">Login</a>
+                        <a href="#">Pay fees online</a>
+                        <a href="#">New & Events</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Student's Life</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Location</a>
+                </div>
+        </div>
+
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-12 col-xs-12"> <hr /> </div>
+                </div>
+        </div>
+
+        <!-- Topline -->
+        <div id="topline" class="container" style="padding-top:7px">
+                <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <marquee behavior="scroll" direction="left">Scrolling text with important advertisment </marquee>
+                        </div>
+                        <div class="text-center col-lg-3 col-md-6 col-sm-12 col-xs-12" id="google_translate_element"></div>
+                        <div class="text-center col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                <a href="#">Submit Enquiry</a>
+                        </div>
+                </div>
+        </div>
+        <!-- School Branding -->
+        <div class="container">
+                <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center"><img id="logo" src="/media/img/logo.jpeg" width="150px"></div>
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"><h1 id="school-name">RAMAN HIGH SCHOOL</h1></div>
+                </div>
+        </div>
+        <!-- Navs for desktops -->
+        <!-- Navigation Bar 1 -->
+        <nav id="nav-1" class="navbar navbar-expand-sm bg-light navbar-light">
+                <!-- Links -->
+                <div class="container navbar-light">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Pay Fees Online</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">News & Events</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Carrers</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Student's Life</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">FAQs</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Location</a>
+                                </li>
+                        </ul>
+                </div>
+        </nav>
+        <!-- Navigation Bar 2 -->
+        <nav id="nav-2" class="navbar navbar-expand-sm bg-dark navnar-dark sticky-top">
+                <!-- Links -->
+                <div class="container navbar-dark">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Academics</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Admissions</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Activities</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Events</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Achievements</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Infrastructure</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Gallery</a>
+                                </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                              <li><a href="#" id="login-button"><i class="fa fa-sign-in" ></i> Login</a></li>
+                        </ul>
+                </div>
+        </nav>
+        <!-- EndOf Header -->
+
+        <!-- Page Body -->
+        <div class="container" style="margin-bottom: 20px;">
+
+           <img src="/media/img/hero-quote.jpg" style="width:100%; height: auto;">
+            <h3 style="margin-top: 20px;">Activities</h3>
+            <!-- Replace the below para with some introduction to activities -->
+            <p>A short introduction about the activities done in the school. Sed vehicula aliquet justo, non placerat ipsum tincidunt ut. Integer quis vehicula turpis, vitae imperdiet erat. Donec porttitor ullamcorper arcu, ut consequat orci. Mauris id lorem non sem viverra facilisis. Ut facilisis nisl enim, vel congue massa condimentum at. Etiam nec tincidunt dolor. Duis ultrices nisl nec nunc elementum lobortis eu sed sapien. Phasellus cursus faucibus turpis, nec scelerisque nulla porta eu. Vestibulum fermentum dolor non tempor sagittis.</p>
+
+            <h3>Co-Curricular Activities</h3>
+            <!-- First explain what are co-curricular activities in brief -->
+            <p>First explain what are co-curricular activities in brief</p>
+                <div style="padding-left: 20px;">
+                    <!-- Activity 1 -->
+                    <h4>Activity Name 1</h4>
+                    <p>Brief Introduction about the activity</p>
+                    <p>All the details and highlights of the activity.</p>
+                    <!-- Activity 2 -->
+                    <h4>Activity Name 2</h4>
+                    <p>Brief Introduction about the activity</p>
+                    <p>All the details and highlights of the activity.</p>
+                    <!-- Activity 3 -->
+                    <h4>Activity Name 3</h4>
+                    <p>Brief Introduction about the activity</p>
+                    <p>All the details and highlights of the activity.</p>
+                </div>
+
+            <h3>Extra-Curricular Activities</h3>
+            <!-- First explain what are co-curricular activities in brief -->
+            <p>First explain what are Extra-curricular activities in brief</p>
+                <div style="padding-left: 20px;">
+                    <!-- Activity 1 -->
+                    <h4>Activity Name 1</h4>
+                    <p>Brief Introduction about the activity</p>
+                    <p>All the details and highlights of the activity.</p>
+                    <!-- Activity 2 -->
+                    <h4>Activity Name 2</h4>
+                    <p>Brief Introduction about the activity</p>
+                    <p>All the details and highlights of the activity.</p>
+                    <!-- Activity 3 -->
+                    <h4>Activity Name 3</h4>
+                    <p>Brief Introduction about the activity</p>
+                    <p>All the details and highlights of the activity.</p>
+                </div>
+
+        </div>
+
+        <!-- Page Body -->
+
+        <!-- Footer -->
+        <footer>
+                <div class="container">
+                        <h3>Contact Us</h3>
+                        <div class="row">
+                                <div id="address" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-map-marker col-sm-1" style="font-size:24px;color:black" aria-hidden="true"></i>
+                                                <span class="col-sm-10">
+                                                        Raman High School, <br />
+                                                        Address Line 1,
+                                                        Address Line 2,
+                                                        Address Line 3,
+                                                        City, Pincode,
+                                                        State, India.
+                                                </span>
+                                        </span>
+                                </div>
+                                <div id="contact" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-envelope col-sm-1" style="font-size:20px;color:black"></i>
+                                                <span class="col-sm-10">contact@school.com</span>
+                                        </span>
+                                </div>
+                                <div id="admission-enquiry-contact" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <h6>For Edmission Enquiry</h5>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-envelope col-sm-1" style="font-size:20px;color:black"></i>
+                                                <span class="col-sm-10">admissions@school.com</span>
+                                        </span>
+                                </div>
+                                <div id="social" class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <a href="#"><i class="fa fa-youtube" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-instagram" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-envelope" style="font-size:24px;color:black;padding:5px"></i></a>
+                                </div>
+                        </div>
+                </div>
+        </footer>
+        <!-- EndOf Footer -->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Navigation drawer controls, for mobile devices -->
+        <script>
+                function openLeftNav() {
+                        document.getElementById("LeftSidenav").style.width = "250px";
+                        document.getElementById("leftmain").style.marginLeft = "250px";
+                        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeLeftNav() {
+                        document.getElementById("LeftSidenav").style.width = "0";
+                        document.getElementById("leftmain").style.marginLeft= "0";
+                        document.body.style.backgroundColor = "white";
+                }
+                function openRightNav() {
+                        document.getElementById("RightSidenav").style.width = "250px";
+                        document.getElementById("rightmain").style.marginRight = "250px";
+                        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeRightNav() {
+                        document.getElementById("RightSidenav").style.width = "0";
+                        document.getElementById("rightmain").style.marginRight= "0";
+                        document.body.style.backgroundColor = "white";
+                }
+        </script>
+        <!-- Google Translate -->
+        <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>

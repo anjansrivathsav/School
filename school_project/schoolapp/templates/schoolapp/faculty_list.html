@@ -1,0 +1,25 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<div class="centerstage">
+  {% for faculty in faculty_list %}
+
+     {% if faculty.image %}
+
+       <img src="{{faculty.image.url}}">
+     {% endif %}
+
+    <h3>{{faculty.name}}</h3>
+    <h4>Areaofinterest : {{faculty.areaofinterest}}</h4>
+    <h4>description : {{faculty.description}}</h4>
+
+    {% if user.is_authenticated %}
+    <a class="btn btn-primary" href="{% url 'faculty_delete' pk=faculty.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<h1>FAQ'S</h1>
+
+<div class="centerstage">
+
+  {% for faq in faq_list %}
+
+   <h3 style="color:#0000FF">{{faq.title}}</h3>
+    <h4>{{faq.answer}}</h4>
+    {% if user.is_authenticated %}
+    <a class="btn btn-primary" href="{% url 'faq_delete' pk=faq.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'schoolapp/base.html'%}
+
+{% block content %}
+<div class="centerstage">
+
+  {% for exams in exam_list %}
+   <div class="post">
+
+     <h1><a href="{% url 'exam_detail' pk=exams.pk %}">{{exams.name}}</h1>
+      <div class="date">
+        <p>published on:{{ exams.created_date|date:"D M Y"}}</p>
+
+      </div>
+      <a href="{% url 'exam_detail' pk=exams.pk %}">acheivers: {{ acheivers.count }}</a>
+   </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

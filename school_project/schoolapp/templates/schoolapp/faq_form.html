@@ -1,0 +1,12 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<form   class="post-form" action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" name="confirm" value="confirm" class="btn btn-primary">
+
+</form>
+
+{% endblock %}

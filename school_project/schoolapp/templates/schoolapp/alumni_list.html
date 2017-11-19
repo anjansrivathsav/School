@@ -1,0 +1,16 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+<div class="centerstage">
+
+    {% for alumni in alumni_list %}
+        <div class="post">
+            <h3 style="align-left"><a href="{% url 'alumni_detail' pk=alumni.pk %}">{{ alumni.title }}</a></h3>
+            <div class="date">
+                <p>Published on: {{ alumni.published_date|date:"D M Y"}}</p>
+            </div>
+            <a href="{% url 'alumni_detail' pk=alumni.pk %}">students: {{ alumni.approve_alumnistudent.count }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

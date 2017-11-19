@@ -1,0 +1,10 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<form  action="" method="post">
+{% csrf_token %}
+{{request_form.as_p}}
+<button type="submit" class="save btn btn-default" value="">Add acheiver</button>
+</form>
+{% endblock %}

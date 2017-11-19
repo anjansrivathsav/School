@@ -1,0 +1,45 @@
+{% extends 'schoolapp/base.html'%}
+
+{% block content %}
+
+        <h1 class="posttitle-loader">{{exam.name}}</h1>
+        {% if exam.created_date %}
+        <div class="date postdate">
+           {{exam.created_date}}
+        </div>
+        {% endif %}
+        <p class="postcontent">{{ exam.examdescription|safe|linebreaksbr}}</p>
+
+          {% if user.is_authenticated %}
+        <a href="{% url 'exam_delete' pk=exam.pk %}" class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span></a>
+          {% endif %}
+
+<hr>
+{% if user.is_authenticated %}
+<a class="btn btn-primary btn-comment" href="{% url 'add_acheiver_to_exam' pk=exam.pk %}">Add acheiver</a>
+{% endif %}
+<div class="centerstage">
+{% for acheiver in exam.rankers.all %}
+
+{% if acheiver.image %}
+
+  <img src="{{acheiver.image.url}}">
+{% endif %}
+
+<h3>{{acheiver.name}}</h3>
+<h4>hallticketno: {{acheiver.rank}}</h4>
+<h4>description : {{acheiver.ticket_no}}</h4>
+
+
+{% if user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'acheiver_delete' pk=acheiver.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+{% endif %}
+
+
+{% endfor %}
+
+</div>
+
+
+{% endblock %}

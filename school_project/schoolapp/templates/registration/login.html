@@ -1,0 +1,22 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+
+  {% if form.errors %}
+  <p>your username and password didnot match</p>
+  {% endif %}
+
+  <form  class="form-signin"  action="{% url 'login'%}" method="POST">
+    {% csrf_token %}
+     <h2 class="form-signin-heading">Please login</h2>
+    <input type="text" class="form-control" name="username" placeholder="username" required="" autofocus="" />
+    <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Login</button>
+    <input type="hidden" name="next" value="{{next}}">
+
+  </form>
+
+</div>
+{% endblock %}

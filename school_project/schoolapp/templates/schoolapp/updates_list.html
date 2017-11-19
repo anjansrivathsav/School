@@ -1,0 +1,24 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<div class="centerstage">
+   <div class="loader">
+
+   {% for update in updates_list%}
+
+
+     <h3>{{update.title}}</h3>
+     <div class="date">
+  <h4> published_date:{{update.created_date|date:"D M Y" }}</h4>
+     </div>
+     {% if user.is_authenticated %}
+         <a class="btn btn-danger" href="{% url 'update_delete' pk=update.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+     {% endif %}
+
+
+   {% endfor %}
+</div>
+</div>
+
+{% endblock %}

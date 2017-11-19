@@ -1,0 +1,21 @@
+{% extends 'schoolapp/base.html' %}
+{% block content %}
+
+
+  {% for post in post_list %}
+
+  <div class="card" style="width: 20rem; margin: 1.7rem; padding-bottom:50px; ">
+    <img class="card-img-top" src="media\2116184.jpg" alt="Card image cap" width="320px">
+    <div class="card-block">
+      <h4 class="card-title">{{post.title}}</h4>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Read more</a>
+      <p class="card-text"><small class="text-muted">by  sir anjan</small></p>
+      <div class="card-footer text-muted">
+        {{ post.published_date|date:"D M Y"}}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock %}

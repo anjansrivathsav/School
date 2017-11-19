@@ -1,0 +1,28 @@
+{% extends 'schoolapp/base.html' %}
+
+{% block content %}
+
+<div class="centerstage">
+    {% for gallary in gallary_list %}
+
+      {% if gallary.description %}
+      <video width="400" controls>
+      <source src="{{gallary.video.url}}" type="video/mp4">
+
+            Your browser does not support HTML5 video.
+      </video>
+
+      {% endif %}
+
+      <p class='postcontent' >{{ gallary.description|safe|linebreaksbr }}</p>
+      {% if user.is_authenticated %}
+      <a class="btn btn-primary" href="{% url 'gallary_delete' pk=gallary.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
+
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock %}
