@@ -2,20 +2,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-        <title>Template - Raman High School</title>
+        <title>About Us - Raman High School</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="{static ''}"> -->
-        <link rel="stylesheet"  href="{% static 'css/style-home.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <!-- Start WOWSlider.com HEAD section -->
-        <link rel="stylesheet" type="text/css" href="{% static 'js/engine1/carousel-style.css' %}" />
-        <script type="text/javascript" src="{% static 'js/engine1/jquery.js' %}"></script>
-        <!-- End WOWSlider.com HEAD section -->
   </head>
   <body>
         <!-- Header -->
@@ -47,9 +42,9 @@
                         <a href="#">Pay fees online</a>
                         <a href="#">New & Events</a>
                         <a href="#">Careers</a>
-                        <a href="{% url 'post_list' %}">Blog</a>
+                        <a href="#">Blog</a>
                         <a href="#">Student's Life</a>
-                        <a href="{% url 'faq_list' %}">FAQs</a>
+                        <a href="#">FAQs</a>
                         <a href="#">Contact Us</a>
                         <a href="#">Location</a>
                 </div>
@@ -96,13 +91,13 @@
                                         <a class="nav-link" href="#">Carrers</a>
                                 </li>
                                 <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
+                                        <a class="nav-link" href="#">Blog</a>
                                 </li>
                                 <li class="nav-item">
                                         <a class="nav-link" href="#">Student's Life</a>
                                 </li>
                                 <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'faq_list' %}">FAQs</a>
+                                        <a class="nav-link" href="#">FAQs</a>
                                 </li>
                                 <li class="nav-item">
                                         <a class="nav-link" href="#">Contact Us</a>
@@ -155,48 +150,42 @@
 
         <!-- Page Body -->
 
-        <!-- Carousel -->
-        <div id = "carousel" class="container">
-                <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-                <!-- compulsory image size width: 1162px height: 360px  -->
-                <div id="wowslider-container1">
-                        <div class="ws_images">
-                                <ul>
-                                        <li><img src="/media/data1/images/img1.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_1"/></li>
-                                        <li><img src="/media/data1/images/img2.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_2"/></li>
-                                        <li><img src="/media/data1/images/img3.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_3"/></li>
-                                        <li><img src="/media/data1/images/img4.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_4"/></li>
-                                        <li><img src="/media/data1/images/img5.jpg" alt="jquery image slider" title="lorem ipsum sit amet" id="wows1_5"/></li>
-                                        <li><img src="/media/data1/images/img6.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_6"/></li>
-                                        <li><img src="/media/data1/images/img7.png" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_7"/></li>
-                                        <li><img src="/media/data1/images/img8.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_8"/></li>
-                                        <li><img src="/media/data1/images/img9.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_9"/></li>
-                                        <li><img src="/media/data1/images/img10.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_10"/></li>
-                                        <li><img src="/media/data1/images/img11.jpg" alt="lorem ipsum sit amet" title="lorem ipsum sit amet" id="wows1_11"/></li>
-                                </ul>
-                        </div>
-                        <div class="ws_bullets">
-                                <div>
-                                        <a href="#" title="lorem ipsum sit amet1"><span>1</span></a>
-                                        <a href="#" title="lorem ipsum sit amet2"><span>2</span></a>
-                                        <a href="#" title="lorem ipsum sit amet3"><span>3</span></a>
-                                        <a href="#" title="lorem ipsum sit amet4"><span>4</span></a>
-                                        <a href="#" title="lorem ipsum sit amet5"><span>5</span></a>
-                                        <a href="#" title="lorem ipsum sit amet"><span>6</span></a>
-                                        <a href="#" title="lorem ipsum sit amet"><span>7</span></a>
-                                        <a href="#" title="lorem ipsum sit amet"><span>8</span></a>
-                                        <a href="#" title="lorem ipsum sit amet"><span>9</span></a>
-                                        <a href="#" title="lorem ipsum sit amet"><span>10</span></a>
-                                        <a href="#" title="lorem ipsum sit amet"><span>11</span></a>
-                                </div>
-                        </div>
-                        <div class="ws_shadow"></div>
-                </div>
-                <script type="text/javascript" src="{% static 'js/engine1/wowslider.js' %}"></script>
-                <script type="text/javascript" src="{% static 'js/engine1/script.js' %}"></script>
-                <!-- End WOWSlider.com BODY section -->
+        <div class="container">
+            <!-- Content for the below should be asked from the school -->
+            <!-- Insert school image here of an appropriate resolution; recommended height: 360px max -->
+            <img src="/media/img/hero-img.jpeg" style="width:100%; height: auto;">
+            <h3 style="margin-top: 5px;">About Us</h3>
+            <!-- Replace the lorem ipsum here by school's brief description -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, sollicitudin vitae commodo feugiat, imperdiet quis neque. Morbi id justo consectetur, egestas tortor eu, venenatis elit. Suspendisse a sollicitudin diam. Donec mattis leo vel lacus faucibus viverra. Aliquam erat volutpat. Vivamus gravida metus dui, pharetra iaculis nunc faucibus quis. Nullam auctor, odio varius iaculis viverra, neque mi venenatis eros, eget pharetra nibh nisl id tellus. Etiam eleifend tortor blandit, malesuada sem sed, pretium neque. Mauris at nibh volutpat, blandit mauris ut, ornare nunc. Aenean mattis ac metus ut venenatis. Suspendisse volutpat ex quis tellus mollis vehicula. Fusce ultricies nibh diam, et imperdiet risus aliquam vitae.
+            </p>
+            <h3>Mission statement</h3>
+            <!-- Replace the lorem ipsum here by school's Mission statement -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, sollicitudin vitae commodo feugiat, imperdiet quis neque. Morbi id justo consectetur, egestas tortor eu, venenatis elit. Suspendisse a sollicitudin diam. Donec mattis leo vel lacus faucibus viverra. Aliquam erat volutpat. Vivamus gravida metus dui, pharetra iaculis nunc faucibus quis. Nullam auctor, odio varius iaculis viverra, neque mi venenatis eros, eget pharetra nibh nisl id tellus. Etiam eleifend tortor blandit, malesuada sem sed, pretium neque. Mauris at nibh volutpat, blandit mauris ut, ornare nunc. Aenean mattis ac metus ut venenatis. Suspendisse volutpat ex quis tellus mollis vehicula. Fusce ultricies nibh diam, et imperdiet risus aliquam vitae.
+            </p>
+            <h3>Our vision</h3>
+            <!-- Replace the lorem ipsum here by school's vision -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, sollicitudin vitae commodo feugiat, imperdiet quis neque. Morbi id justo consectetur, egestas tortor eu, venenatis elit. Suspendisse a sollicitudin diam. Donec mattis leo vel lacus faucibus viverra. Aliquam erat volutpat. Vivamus gravida metus dui, pharetra iaculis nunc faucibus quis. Nullam auctor, odio varius iaculis viverra, neque mi venenatis eros, eget pharetra nibh nisl id tellus. Etiam eleifend tortor blandit, malesuada sem sed, pretium neque. Mauris at nibh volutpat, blandit mauris ut, ornare nunc. Aenean mattis ac metus ut venenatis. Suspendisse volutpat ex quis tellus mollis vehicula. Fusce ultricies nibh diam, et imperdiet risus aliquam vitae.
+            </p>
+            <h3>Rules and Regulation</h3>
+            <!-- Replace the lorem ipsum here by school's Rules and Regulations -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, sollicitudin vitae commodo feugiat, imperdiet quis neque. Morbi id justo consectetur, egestas tortor eu, venenatis elit. Suspendisse a sollicitudin diam. Donec mattis leo vel lacus faucibus viverra. Aliquam erat volutpat. Vivamus gravida metus dui, pharetra iaculis nunc faucibus quis. Nullam auctor, odio varius iaculis viverra, neque mi venenatis eros, eget pharetra nibh nisl id tellus. Etiam eleifend tortor blandit, malesuada sem sed, pretium neque. Mauris at nibh volutpat, blandit mauris ut, ornare nunc. Aenean mattis ac metus ut venenatis. Suspendisse volutpat ex quis tellus mollis vehicula. Fusce ultricies nibh diam, et imperdiet risus aliquam vitae.
+            </p>
+            <h3>Policies</h3>
+            <!-- Replace the lorem ipsum here by school's policies -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, sollicitudin vitae commodo feugiat, imperdiet quis neque. Morbi id justo consectetur, egestas tortor eu, venenatis elit. Suspendisse a sollicitudin diam. Donec mattis leo vel lacus faucibus viverra. Aliquam erat volutpat. Vivamus gravida metus dui, pharetra iaculis nunc faucibus quis. Nullam auctor, odio varius iaculis viverra, neque mi venenatis eros, eget pharetra nibh nisl id tellus. Etiam eleifend tortor blandit, malesuada sem sed, pretium neque. Mauris at nibh volutpat, blandit mauris ut, ornare nunc. Aenean mattis ac metus ut venenatis. Suspendisse volutpat ex quis tellus mollis vehicula. Fusce ultricies nibh diam, et imperdiet risus aliquam vitae.
+            </p>
+            <h3>Alumni</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim felis, sollicitudin vitae commodo feugiat, imperdiet quis neque. Morbi id justo consectetur, egestas tortor eu, venenatis elit. Suspendisse a sollicitudin diam. Donec mattis leo vel lacus faucibus viverra. Aliquam erat volutpat. Vivamus gravida metus dui, pharetra iaculis nunc faucibus quis. Nullam auctor, odio varius iaculis viverra, neque mi venenatis eros, eget pharetra nibh nisl id tellus. Etiam eleifend tortor blandit, malesuada sem sed, pretium neque. Mauris at nibh volutpat, blandit mauris ut, ornare nunc. Aenean mattis ac metus ut venenatis. Suspendisse volutpat ex quis tellus mollis vehicula. Fusce ultricies nibh diam, et imperdiet risus aliquam vitae.
+            </p>
+
+            <!-- Note: A Dynamic element is to be added here, please refer to the wireframe -->
         </div>
-        <!-- End Of Carousel -->
 
         <!-- Page Body -->
 
@@ -296,9 +285,5 @@
                 }
         </script>
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <!-- Carousel -->
-        <!-- <script type="text/javascript" src="engine1/wowslider.js"></script> -->
-        <!-- <script type="text/javascript" src="engine1/script.js"></script> -->
-
   </body>
 </html>

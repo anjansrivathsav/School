@@ -1,0 +1,339 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+        <title>Achievements - Raman High School</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <!-- Styles for card carousel -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/card-carousel.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  </head>
+  <body>
+        <!-- Header -->
+        <!-- Navs for mobile devices -->
+        <div class="sticky-top" id="mobile-nav-drawer">
+                <!-- Left drawer -->
+                <div id="LeftSidenav" class="leftsidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&times;</a>
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Academics</a>
+                        <a href="#">Admissions</a>
+                        <a href="#">Activities</a>
+                        <a href="#">Events</a>
+                        <a href="#">Achievements</a>
+                        <a href="#">Infrastructure</a>
+                        <a href="#">Gallery</a>
+                        <!-- <a href="#">Submit Enquiry</a> -->
+                </div>
+                <div>
+                        <span class="" id="leftmain" style="font-size:30px;cursor:pointer" onclick="openLeftNav()">&#9776;</span>
+                        <span id="enquiry"><a href="#"><h5>Submit Enquiry</h5></a></span>
+                        <span class="" id = "rightmain" style="font-size:30px;cursor:pointer" onclick="openRightNav()">&#9776;</span>
+                </div>
+                <!-- Right drawer -->
+                <div id="RightSidenav" class="rightsidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&times;</a>
+                        <a href="#">Login</a>
+                        <a href="#">Pay fees online</a>
+                        <a href="#">New & Events</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Student's Life</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Location</a>
+                </div>
+        </div>
+
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-12 col-xs-12"> <hr /> </div>
+                </div>
+        </div>
+
+        <!-- Topline -->
+        <div id="topline" class="container" style="padding-top:7px">
+                <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <marquee behavior="scroll" direction="left">Scrolling text with important advertisment </marquee>
+                        </div>
+                        <div class="text-center col-lg-3 col-md-6 col-sm-12 col-xs-12" id="google_translate_element"></div>
+                        <div class="text-center col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                <a href="#">Submit Enquiry</a>
+                        </div>
+                </div>
+        </div>
+        <!-- School Branding -->
+        <div class="container">
+                <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center"><img id="logo" src="/media/img/logo.jpeg" width="150px"></div>
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"><h1 id="school-name">RAMAN HIGH SCHOOL</h1></div>
+                </div>
+        </div>
+        <!-- Navs for desktops -->
+        <!-- Navigation Bar 1 -->
+        <nav id="nav-1" class="navbar navbar-expand-sm bg-light navbar-light">
+                <!-- Links -->
+                <div class="container navbar-light">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Pay Fees Online</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">News & Events</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Carrers</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Student's Life</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">FAQs</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Location</a>
+                                </li>
+                        </ul>
+                </div>
+        </nav>
+        <!-- Navigation Bar 2 -->
+        <nav id="nav-2" class="navbar navbar-expand-sm bg-dark navnar-dark sticky-top">
+                <!-- Links -->
+                <div class="container navbar-dark">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Academics</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Admissions</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Activities</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Events</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Achievements</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Infrastructure</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Gallery</a>
+                                </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                              <li><a href="#" id="login-button"><i class="fa fa-sign-in" ></i> Login</a></li>
+                        </ul>
+                </div>
+        </nav>
+        <!-- EndOf Header -->
+
+        <!-- Page Body -->
+        <div class="container">
+            <h3>
+                Achievements
+            </h3>
+            <!-- Dynamic content begins from here -->
+            <!-- Use the below template for making a card using python script-->
+            <!-- Each group can contain a maximum of three cards, one or two cards are also allowed, all these groups combined will form a carousel -->
+                    <!-- Html Code for a group of three cards -->
+                    <!-- End of Html Code for a card -->
+
+            <!-- Academics -->
+            <div class="card-carousel">
+                <h4>
+                    Academics
+                </h4>
+                <!-- Card carousel begins here -->
+                   <section class="carousel slide" data-ride="carousel" id="postsCarousel">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 text-md-right lead">
+                                    <a class="btn btn-outline-secondary prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
+                                    <a class="btn btn-outline-secondary next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container p-t-0 m-t-2 carousel-inner">
+
+                            <div class="row row-equal carousel-item active m-t-0">
+
+                                {% for exams in exam_list %}
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="card">
+                                        <div class="card-img-top card-img-top-250">
+                                            <img class="img-fluid" src="http://via.placeholder.com/350x150" alt="Carousel 1">
+                                        </div>
+                                        <div class="card-block p-t-2">
+                                            <h2>
+                                                <a href="{% url 'exam_detail' pk=exams.pk %}">{{exams.name}}</a>
+                                            </h2>
+                                            <h6 class="small text-wide p-b-2">A short description about the achievement will go here. Lorem impsum sit dolor amet.</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                </section>
+            </div>
+            <!-- Sports -->
+            <div class="card-carousel">
+                <h4>
+                    Sports
+                </h4>
+                <!-- Card carousel begins here -->
+            </div>
+            <!-- Technology -->
+            <div class="card-carousel">
+                <h4>
+                    Technology
+                </h4>
+                <!-- Card carousel begins here -->
+            </div>
+            <!-- Literature -->
+            <div class="card-carousel">
+                <h4>
+                    Literature
+                </h4>
+                <!-- Card carousel begins here -->
+            </div>
+        </div>
+        <!-- Page Body -->
+
+        <!-- Footer -->
+        <footer>
+                <div class="container">
+                        <h3>Contact Us</h3>
+                        <div class="row">
+                                <div id="address" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-map-marker col-sm-1" style="font-size:24px;color:black" aria-hidden="true"></i>
+                                                <span class="col-sm-10">
+                                                        Raman High School, <br />
+                                                        Address Line 1,
+                                                        Address Line 2,
+                                                        Address Line 3,
+                                                        City, Pincode,
+                                                        State, India.
+                                                </span>
+                                        </span>
+                                </div>
+                                <div id="contact" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-envelope col-sm-1" style="font-size:20px;color:black"></i>
+                                                <span class="col-sm-10">contact@school.com</span>
+                                        </span>
+                                </div>
+                                <div id="admission-enquiry-contact" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <h6>For Edmission Enquiry</h5>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-envelope col-sm-1" style="font-size:20px;color:black"></i>
+                                                <span class="col-sm-10">admissions@school.com</span>
+                                        </span>
+                                </div>
+                                <div id="social" class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <a href="#"><i class="fa fa-youtube" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-instagram" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-envelope" style="font-size:24px;color:black;padding:5px"></i></a>
+                                </div>
+                        </div>
+                </div>
+        </footer>
+        <!-- EndOf Footer -->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Navigation drawer controls, for mobile devices -->
+        <script>
+                function openLeftNav() {
+                        document.getElementById("LeftSidenav").style.width = "250px";
+                        document.getElementById("leftmain").style.marginLeft = "250px";
+                        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeLeftNav() {
+                        document.getElementById("LeftSidenav").style.width = "0";
+                        document.getElementById("leftmain").style.marginLeft= "0";
+                        document.body.style.backgroundColor = "white";
+                }
+                function openRightNav() {
+                        document.getElementById("RightSidenav").style.width = "250px";
+                        document.getElementById("rightmain").style.marginRight = "250px";
+                        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeRightNav() {
+                        document.getElementById("RightSidenav").style.width = "0";
+                        document.getElementById("rightmain").style.marginRight= "0";
+                        document.body.style.backgroundColor = "white";
+                }
+        </script>
+        <!-- Google Translate -->
+        <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <!-- scripts for card-carousels -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+                (function($) {
+                        "use strict";
+                        // manual carousel controls
+                        $('.next').click(function(){ $('.carousel').carousel('next');return false; });
+                        $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
+                })(jQuery);
+        </script>
+  </body>
+</html>

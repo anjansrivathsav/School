@@ -14,7 +14,7 @@ from django.core.mail import EmailMessage
 import os
 from django.conf import settings
 from django.http import HttpResponse
-
+from django.template.loader import render_to_string
 
 def download(request,path):
     file_path = os.path.join(settings.MEDIA_ROOT,path)
@@ -27,6 +27,11 @@ def download(request,path):
 
 
 
+class InfrastructureView(TemplateView):
+    template_name = 'infrastructure.html'
+
+class ContactView(TemplateView):
+    template_name = 'contactus.html'
 
 class EventView(TemplateView):
     template_name = 'events.html'
@@ -44,6 +49,37 @@ class AboutmeView(TemplateView):
 class AdmissionView(TemplateView):
     template_name = 'admissions.html'
 
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
+class CareerView(TemplateView):
+    template_name = 'careers.html'
+
+class AcheivementView(TemplateView):
+    template_name = 'acheivements.html'
+
+class StudentLifeView(TemplateView):
+    template_name = 'studentslife.html'
+
+def send_verification(email,msg):
+    print("send verification")
+    try:
+        server = smtplib.SMTP('smtp.gmail.com',587)
+        server.set_debuglevel(1)
+        server.starttls()
+        server.ehlo()
+        server.login('anjansrivathsav1997@gmail.com','30anjan97')
+        server.sendmail('anjansrivathsav1997@gmail.com',email,msg)
+        server.quit()
+        print('successfully sent the mail')
+    except:
+        print("failed to sent")
+
+
+def verify(request):
+    message = render_to_string('schoolapp/sending.html')
+    send_verification('shobhitpandey8@gmail.com',message)
+    return redirect('index')
 
 class PostListView(ListView):
     model = Post
@@ -190,7 +226,6 @@ class FaqListView(ListView):
 
 class GallaryListView(ListView):
     login_url = '/login/'
-
     model = Gallary
 
     def get_queryset(self):
@@ -199,6 +234,8 @@ class GallaryListView(ListView):
 
 class ExamListView(ListView):
     model = Exam
+
+    template_name = 'acheivements.html'
 
     def get_queryset(self):
         return Exam.objects.order_by('-created_date')

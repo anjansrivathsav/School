@@ -52,7 +52,7 @@ class Faculty(models.Model):
 
 
 class Gallary(models.Model):
-    video = models.FileField()
+    video = models.FileField(blank = True)
     description = models.TextField()
     created_date = models.DateTimeField(default = timezone.now)
     image = models.ImageField(blank = True)

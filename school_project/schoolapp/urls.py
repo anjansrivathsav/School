@@ -4,12 +4,19 @@ from . import views
 
 
 urlpatterns = [
+    url(r'^verify/$',views.verify,name='verify'),
+    url(r'^infrastructure/$',views.InfrastructureView.as_view(),name='infrastructure'),
     url(r'^about/$',views.AboutView.as_view(),name='index'),
+    url(r'^contact/$',views.ContactView.as_view(),name='contact'),
     url(r'^activities/$',views.ActivityView.as_view(),name='activity'),
     url(r'^events/$',views.EventView.as_view(),name='events'),
+    url(r'^studentlife/$',views.StudentLifeView.as_view(),name='studentlife'),
+    url(r'^careers/$',views.CareerView.as_view(),name='career'),
     url(r'^admissions/$',views.AdmissionView.as_view(),name='admission'),
+    url(r'^acheivements/$',views.AcheivementView.as_view(),name='acheivement'),
     url(r'^aboutme/$',views.AboutmeView.as_view(),name='aboutme'),
-    url(r'^$',views.PostListView.as_view(),name = 'post_list'),
+    url(r'^$',views.HomeView.as_view(),name = 'home'),
+    url(r'^blog/',views.PostListView.as_view(),name = 'post_list'),
     url(r'^post/(?P<pk>\d+)/$',views.PostDetailView.as_view(),name = 'post_detail'),
     url(r'^post/new/$',views.CreatePostView.as_view(),name='post_new'),
     url(r'^post/(?P<pk>\d+)/edit/$',views.PostUpdateView.as_view(),name = 'post_edit'),

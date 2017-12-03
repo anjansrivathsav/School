@@ -1,28 +1,656 @@
-{% extends 'schoolapp/base.html' %}
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+        <title>Gallery - Raman High School</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block content %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-<div class="centerstage">
-    {% for gallary in gallary_list %}
+        <!-- Gallery specfic styles -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/gallery-styles.css' %}">
+  </head>
+  <body>
+        <!-- Header -->
+        <!-- Navs for mobile devices -->
+        <div class="sticky-top" id="mobile-nav-drawer">
+                <!-- Left drawer -->
+                <div id="LeftSidenav" class="leftsidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&times;</a>
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Academics</a>
+                        <a href="#">Admissions</a>
+                        <a href="#">Activities</a>
+                        <a href="#">Events</a>
+                        <a href="#">Achievements</a>
+                        <a href="#">Infrastructure</a>
+                        <a href="#">Gallery</a>
+                        <!-- <a href="#">Submit Enquiry</a> -->
+                </div>
+                <div>
+                        <span class="" id="leftmain" style="font-size:30px;cursor:pointer" onclick="openLeftNav()">&#9776;</span>
+                        <span id="enquiry"><a href="#"><h5>Submit Enquiry</h5></a></span>
+                        <span class="" id = "rightmain" style="font-size:30px;cursor:pointer" onclick="openRightNav()">&#9776;</span>
+                </div>
+                <!-- Right drawer -->
+                <div id="RightSidenav" class="rightsidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&times;</a>
+                        <a href="#">Login</a>
+                        <a href="#">Pay fees online</a>
+                        <a href="#">New & Events</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Student's Life</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Location</a>
+                </div>
+        </div>
 
-      {% if gallary.description %}
-      <video width="400" controls>
-      <source src="{{gallary.video.url}}" type="video/mp4">
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-12 col-xs-12"> <hr /> </div>
+                </div>
+        </div>
 
-            Your browser does not support HTML5 video.
-      </video>
+        <!-- Topline -->
+        <div id="topline" class="container" style="padding-top:7px">
+                <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <marquee behavior="scroll" direction="left">Scrolling text with important advertisment </marquee>
+                        </div>
+                        <div class="text-center col-lg-3 col-md-6 col-sm-12 col-xs-12" id="google_translate_element"></div>
+                        <div class="text-center col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                <a href="#">Submit Enquiry</a>
+                        </div>
+                </div>
+        </div>
+        <!-- School Branding -->
+        <div class="container">
+                <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center"><img id="logo" src="/media/img/logo.jpeg" width="150px"></div>
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"><h1 id="school-name">RAMAN HIGH SCHOOL</h1></div>
+                </div>
+        </div>
+        <!-- Navs for desktops -->
+        <!-- Navigation Bar 1 -->
+        <nav id="nav-1" class="navbar navbar-expand-sm bg-light navbar-light">
+                <!-- Links -->
+                <div class="container navbar-light">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Pay Fees Online</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">News & Events</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Carrers</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Student's Life</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">FAQs</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Location</a>
+                                </li>
+                        </ul>
+                </div>
+        </nav>
+        <!-- Navigation Bar 2 -->
+        <nav id="nav-2" class="navbar navbar-expand-sm bg-dark navnar-dark sticky-top">
+                <!-- Links -->
+                <div class="container navbar-dark">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Academics</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Admissions</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Activities</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Events</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Achievements</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Infrastructure</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">Gallery</a>
+                                </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                              <li><a href="{% url 'login'%}" id="login-button"><i class="fa fa-sign-in" ></i> Login</a></li>
+                        </ul>
+                </div>
+        </nav>
+        <!-- EndOf Header -->
 
-      {% endif %}
+        <!-- Page Body -->
+    <div class="container">
+        <h3 style="margin-top: 20px">Gallery</h3>
+        <!-- The code below this line is template to be used to dynamically fill data using django -->
+        <!-- The following div should be duplicated N times if N years of gallery is available. Each div will correspond to a particular year. For eg: 2017 -->
+        <section class="gallery-year">
+            <input type="checkbox" id="g1">
+            <label for="g1">2017</label>
+            <div class="gallery">
+                <div class="activities">
+                    <h4>Activities</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="ac1-2017">Activity-1</button>
+                        <button class="btn btn-default filter-button" data-filter="ac2-2017">Activity-2</button>
+                        <button class="btn btn-default filter-button" data-filter="ac3-2017">Activity-3</button>
+                        <button class="btn btn-default filter-button" data-filter="ac4-2017">Activity-4</button>
+                    </div>
+                    <!-- Tags above this -->
 
-      <p class='postcontent' >{{ gallary.description|safe|linebreaksbr }}</p>
-      {% if user.is_authenticated %}
-      <a class="btn btn-primary" href="{% url 'gallary_delete' pk=gallary.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-      {% endif %}
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
 
-    {% endfor %}
+                    {% for g in gallary_list %}
 
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
 
-</div>
+                       {% for g in gallary_list %}
 
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
 
-{% endblock %}
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="Events">
+                    <h4>Events</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="ev1-2017">Event-1</button>
+                        <button class="btn btn-default filter-button" data-filter="ev2-2017">Event-2</button>
+                        <button class="btn btn-default filter-button" data-filter="ev3-2017">Event-3</button>
+                        <button class="btn btn-default filter-button" data-filter="ev4-2017">Event-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="Campus">
+                    <h4>Campus</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="cm1-2017">Campus-1</button>
+                        <button class="btn btn-default filter-button" data-filter="cm2-2017">Campus-2</button>
+                        <button class="btn btn-default filter-button" data-filter="cm3-2017">Campus-3</button>
+                        <button class="btn btn-default filter-button" data-filter="cm4-2017">Campus-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="Boarding">
+                    <h4>Boarding</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="bd1-2017">boarding-1</button>
+                        <button class="btn btn-default filter-button" data-filter="bd2-2017">Boarding-2</button>
+                        <button class="btn btn-default filter-button" data-filter="bd3-2017">Boarding-3</button>
+                        <button class="btn btn-default filter-button" data-filter="bd4-2017">Boarding-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="gallery-year">
+            <input type="checkbox" id="g1">
+            <label for="g1">2017</label>
+            <div class="gallery">
+                <div class="activities">
+                    <h4>Activities</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="ac1-2017">Activity-1</button>
+                        <button class="btn btn-default filter-button" data-filter="ac2-2017">Activity-2</button>
+                        <button class="btn btn-default filter-button" data-filter="ac3-2017">Activity-3</button>
+                        <button class="btn btn-default filter-button" data-filter="ac4-2017">Activity-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="Events">
+                    <h4>Events</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="ev1-2017">Event-1</button>
+                        <button class="btn btn-default filter-button" data-filter="ev2-2017">Event-2</button>
+                        <button class="btn btn-default filter-button" data-filter="ev3-2017">Event-3</button>
+                        <button class="btn btn-default filter-button" data-filter="ev4-2017">Event-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="Campus">
+                    <h4>Campus</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="cm1-2017">Campus-1</button>
+                        <button class="btn btn-default filter-button" data-filter="cm2-2017">Campus-2</button>
+                        <button class="btn btn-default filter-button" data-filter="cm3-2017">Campus-3</button>
+                        <button class="btn btn-default filter-button" data-filter="cm4-2017">Campus-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="Boarding">
+                    <h4>Boarding</h4>
+                    <!-- Tags here -->
+                    <!-- To add a new tag, duplicate the last button element, and update its 'data-filter' serially, also update its activity name -->
+                    <div align="left">
+                        <button class="btn btn-default filter-button" data-filter="all">All</button>
+                        <button class="btn btn-default filter-button" data-filter="bd1-2017">boarding-1</button>
+                        <button class="btn btn-default filter-button" data-filter="bd2-2017">Boarding-2</button>
+                        <button class="btn btn-default filter-button" data-filter="bd3-2017">Boarding-3</button>
+                        <button class="btn btn-default filter-button" data-filter="bd4-2017">Boarding-4</button>
+                    </div>
+                    <!-- Tags above this -->
+
+                    <!-- Images below this -->
+                    <div class="row">
+                    <!-- To add a new image, duplicate the div with class gallery product, update the tag data-filter value right next to the word filter -->
+                    {% for g in gallary_list %}
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac1-2017">
+                        <img src="{{g.image.url}}" class="img-fluid">
+                      </div>
+                       {% endfor %}
+
+                       {% for g in gallary_list %}
+
+                       <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac2-2017">
+                           <img src="{{g.image.url}}" class="img-fluid">
+                         </div>
+                          {% endfor %}
+                          {% for g in gallary_list %}
+
+                          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac3-2017">
+                              <img src="{{g.image.url}}" class="img-fluid">
+                            </div>
+                             {% endfor %}
+                             {% for g in gallary_list %}
+
+                             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter ac4-2017">
+                                 <img src="{{g.image.url}}" class="img-fluid">
+                               </div>
+                                {% endfor %}
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+        <!-- Page Body -->
+
+        <!-- Footer -->
+        <footer>
+                <div class="container">
+                        <h3>Contact Us</h3>
+                        <div class="row">
+                                <div id="address" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-map-marker col-sm-1" style="font-size:24px;color:black" aria-hidden="true"></i>
+                                                <span class="col-sm-10">
+                                                        Raman High School, <br />
+                                                        Address Line 1,
+                                                        Address Line 2,
+                                                        Address Line 3,
+                                                        City, Pincode,
+                                                        State, India.
+                                                </span>
+                                        </span>
+                                </div>
+                                <div id="contact" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-envelope col-sm-1" style="font-size:20px;color:black"></i>
+                                                <span class="col-sm-10">contact@school.com</span>
+                                        </span>
+                                </div>
+                                <div id="admission-enquiry-contact" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                                        <h6>For Edmission Enquiry</h5>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class = "row">
+                                                <i class="hide-lessdn580 fa fa-phone col-sm-1" style="font-size:24px;color:black"></i>
+                                                <span class="col-sm-10">+91 XXXXXXXXXX</span>
+                                        </span>
+                                        <span class="row">
+                                                <i class="hide-lessdn580 fa fa-envelope col-sm-1" style="font-size:20px;color:black"></i>
+                                                <span class="col-sm-10">admissions@school.com</span>
+                                        </span>
+                                </div>
+                                <div id="social" class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center">
+                                        <a href="#"><i class="fa fa-youtube" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-instagram" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" style="font-size:24px;color:black;padding:5px"></i></a>
+                                        <a href="#"><i class="fa fa-envelope" style="font-size:24px;color:black;padding:5px"></i></a>
+                                </div>
+                        </div>
+                </div>
+        </footer>
+        <!-- EndOf Footer -->
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Navigation drawer controls, for mobile devices -->
+        <script>
+                function openLeftNav() {
+                        document.getElementById("LeftSidenav").style.width = "250px";
+                        document.getElementById("leftmain").style.marginLeft = "250px";
+                        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeLeftNav() {
+                        document.getElementById("LeftSidenav").style.width = "0";
+                        document.getElementById("leftmain").style.marginLeft= "0";
+                        document.body.style.backgroundColor = "white";
+                }
+                function openRightNav() {
+                        document.getElementById("RightSidenav").style.width = "250px";
+                        document.getElementById("rightmain").style.marginRight = "250px";
+                        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+
+                function closeRightNav() {
+                        document.getElementById("RightSidenav").style.width = "0";
+                        document.getElementById("rightmain").style.marginRight= "0";
+                        document.body.style.backgroundColor = "white";
+                }
+        </script>
+        <!-- Gallery Tags Control -->
+        <script>
+                $(document).ready(function(){
+                    $(".filter-button").click(function(){
+                        var value = $(this).attr('data-filter');
+
+                        if(value == "all")
+                        {
+                            // $('.filter').removeClass('hidden');
+                            $('.filter').show('1000');
+                        }
+                        else
+                        {
+                           // $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                           // $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                            $(".filter").not('.'+value).hide('3000');
+                            $('.filter').filter('.'+value).show('3000');
+                        }
+                });
+            })
+        </script>
+        <!-- Google Translate -->
+        <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>
